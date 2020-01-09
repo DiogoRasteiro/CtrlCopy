@@ -1,0 +1,68 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} Data Science {% endblock %}
+
+{% block content %} 
+
+<!--Phrase-->
+<div class="container my-4" >
+        <div class="row">
+          <div class="mx-auto text-center" >
+            <img src="{% static 'img/books.png' %}" width="70" height="70" alt="">
+            <h4 class="text-muted my-2"> Data Science </h4>
+          </div>
+        </div>
+    </div>
+    
+
+<!-- Blocks -->
+          <container class=" my-3 " style="background-color: #176988; height: 50px;">
+                <div class="container text-center text-md-center">
+                  <div class="row">
+                    <div class="col-sm-7">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class=" mx-auto" style="width: 10000px;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 3%; background-color: #fbfbfb">
+                                          <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                            
+                                            <h5 class="text-muted my-2"> Course Details </h5>
+                                            <p style="text-align: justify;">
+                                                Ciência de dados (em inglês: data science) é uma área interdisciplinar voltada para o estudo e a análise de dados, estruturados ou não, que visa a extração de conhecimento ou insights para possíveis tomadas de decisão, de maneira similar à mineração de dados. Ciência de dados alia big data e machine learning, além de técnicas de outras áreas interdisciplinares como estatística, economia, engenharia e outros subcampos da computação como: banco de dados e análise de agrupamentos (cluster analysis). A ciência de dados é um campo que já existe há 30 anos, porém ganhou mais destaque nos últimos anos devido a alguns fatores como: o surgimento e popularização do Big Data e o desenvolvimento de áreas como o machine learning. 
+                                                <h5 class="text-muted my-2">Professor Lectioning</h5>
+                                                <button type="button" class="btn btn-md btn-info" >Prof. João Figueira</button>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                    <hr class="clearfix w-50 d-md-none">
+                    <div class="col-lg-5 mx-auto">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class="mx-auto" style="width: 100%;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb">
+                                          <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                                <h5 class="text-muted my-2">Students Enrolled</h5>
+
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Dinis Forte</button>
+                                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; "> Joana Ramos</button>
+                                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Maria Simões</button>
+                                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Nuno Silva</button>
+                                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Teodoro Bacelar</button>
+                                                         
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                  </div>
+                </div>
+          </container>
+{% endblock %}

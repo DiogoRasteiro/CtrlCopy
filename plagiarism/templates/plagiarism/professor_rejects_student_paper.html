@@ -1,0 +1,19 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} Rejected Doc {% endblock %}
+
+{% block content %} 
+
+<!--Phrase-->
+<div class="container my-4" >
+        <div class="row">
+          <div class="mx-auto" >
+                <img class="mx-auto d-block" src="{% static 'img/plagiarized.jpg' %}" width="200" height="200" alt="">
+              <br>
+            <h5 class="text-muted my-2">DOCUMENT REJECTED. We sent an email to the student, warning to submit a new paper.</h5>
+           
+          </div>
+        </div>
+    </div>
+    {% endblock %}

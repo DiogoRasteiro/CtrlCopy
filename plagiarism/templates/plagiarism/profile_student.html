@@ -1,0 +1,94 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} About Us {% endblock %}
+
+{% block content %} 
+<!--Phrase-->
+<div class="container my-4" >
+        <div class="row">
+          <div class="mx-auto" >
+                <img src="{% static 'img/profile.png' %}" width="70" height="70" alt="">
+            <h4 class="text-muted my-2">Profile</h4>
+          </div>
+        </div>
+    </div>
+    
+
+<!-- Blocks -->
+          <container class=" my-3 " style="background-color: #176988; height: 50px;">
+                <div class="container text-center text-md-center">
+                  <div class="row">
+                    <div class="col-sm-7">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class=" mx-auto" style="width: 10000px;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb">
+                                          <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                            <h5 class="text-muted">Your Courses</h5>
+                                            <a href="geospatial_intelligence.html"> <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; "> Geospatial Intelligence</button> </a>
+                                            <a href="psi.html"> <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Information Systems Projects</button> </a>
+                                            <a href="data_science.html"> <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Data Science</button> </a>
+                                              <a href="business_intelligence.html"><button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Business Intelligence</button> </a>
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                    <hr class="clearfix w-50 d-md-none">
+                    <div class="col-lg-5 mx-auto">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class="mx-auto" style="width: 100%;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb">
+                                          <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                                <h5 class="text-muted">Your Information</h5>
+                                                <p class="text-muted">Student Number: R20200784</p>
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            <form>
+                                                              <div class="form-group row">
+                                                                <label for="name" class="col-4 col-form-label">First Name</label> 
+                                                                <div class="col-8">
+                                                                  <input id="name" name="name" placeholder="Maria" class="form-control here" type="text">
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-group row">
+                                                                <label for="lastname" class="col-4 col-form-label">Last Name</label> 
+                                                                <div class="col-8">
+                                                                  <input id="lastname" name="lastname" placeholder="Simões" class="form-control here" type="text">
+                                                                </div>
+                                                              </div>
+                                                            
+                                                              <div class="form-group row">
+                                                                <label for="email" class="col-4 col-form-label">Email</label> 
+                                                                <div class="col-8">
+                                                                  <input id="email" name="email" placeholder="maria.simoes@gmail.com" class="form-control here" type="text">
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-group row">
+                                                                <label for="newpass" class="col-4 col-form-label">New Password</label> 
+                                                                <div class="col-8">
+                                                                  <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
+                                                                </div>
+                                                              </div> 
+                                                              <div class="form-group row">
+                                                                <div class="offset-4 col-8">
+                                                                  <button name="submit" type="submit" class="btn btn-primary" style="background-color: #BED62F; border-color: #BED62F;">Update My Profile</button>
+                                                                </div>
+                                                              </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                  </div>
+                </div>
+          </container>
+
+{% endblock %}

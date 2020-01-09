@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>  {% block title %} About us {% endblock title %} </title>
+	<link rel="stylesheet" href= "{% static 'css/bootstrap.css' %}" >
+</head>
+
+
+	<body>
+  <!-- Navbar -->
+  {% if user.is_authenticated %}
+      <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #176988;">
+    <div class="container">
+      <a class="navbar-brand" href= "{% url 'plagiarism:SubmitDocument' %}" >
+            <img src="{% static 'img/ctrl.png' %}" width="100" height="100" alt="">
+          </a>
+        <h2 class="text-white"> IMS {{session}} Plagiarism Checker</h2>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'plagiarism:Welcome' %}">Welcome {{ user.get_username }}
+                    <img src="{% static 'img/professor.png' %}" width="30" height="30" alt="">
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'plagiarism:Profile' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'plagiarism:About' %}">About</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'plagiarism:Logout' %}">Logout</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% else %}
+    <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #176988;">
+        <div class="container">
+
+          <a class="navbar-brand" href="#">
+                <img src="{% static 'img/ctrl.png' %}" width="100" height="100" alt="">
+              </a>
+             <h2 class="text-white"> IMS Plagiarism Checker</h2>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                {% block nav %}
+              <li class="nav-item">
+                <a class="nav-link" href= "{% url 'plagiarism:SubmitDocument' %}" >Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'plagiarism:About' %}">About</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'plagiarism:Login' %}">Login</a>
+              </li>
+              {% endblock nav %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% endif %}
+
+      {% block content %}
+  {% endblock %}
+
+  {% block footer %}
+  <!-- Footer -->
+      <footer class="page-footer font-small fixed-bottom pt-1 " style="background-color: #176988; height: 50px;">
+        <div class="container text-center text-md-center">
+          <div class="row">
+            <div class="col-sm-3 mx-auto">
+              <h6 class="font-weight-light mt-8 mb-1 small text-white">Privacy Statement</h6>
+            </div>
+            <hr class="clearfix w-50 d-md-none">
+            <div class="col-sm-3 mx-auto">
+              <h6 class="font-weight-light mt-8 mb-1 small text-white">Terms & Conditions</h6>
+            </div>
+            <hr class="clearfix w-50 d-md-none">
+            <div class="col-sm-3 mx-auto">
+              <h6 class="font-weight-light mt-8 mb-1 small text-white">Cookie Policy</h6>
+            </div>
+          </div>
+        </div>
+      
+  <!-- Copyright -->
+  <div class="footer-copyright text-center pt-0.5 small text-white"  >© 2019 Copyright: LimITless: All rights reserved
+      </div>
+  </footer>
+  
+  <script src="js/jquery-3.3.1.slim.min.js" ></script>
+  <script src="js/popper.min.js" ></script>
+  <script src="js/bootstrap.min.js" ></script>
+  {% endblock %}
+		
+	</body>
+</html>

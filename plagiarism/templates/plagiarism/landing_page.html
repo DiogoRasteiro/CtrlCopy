@@ -1,0 +1,41 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} Ctrl+C {% endblock %}
+
+{% block content %} 
+
+<!--Phrase-->
+<div class="container my-4" >
+    <div class="row">
+      <div class="mx-auto" >
+          <img class="mx-auto d-block"src="{% static 'img/gear.png' %}" width="70" height="70" alt="">
+        <h4 class="text-muted my-2">Please test your paper below to check plagiarism percentage</h4>
+      </div>
+    </div>
+</div>
+
+<!-- Upload -->
+<div class="container" >
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" >
+        <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb;">
+          <div class="card-body"style=" border-style: dashed; border-color: #176988;" >
+
+            <form class="form-signin" >
+              <div class="form-label-group" >
+                  <img class="mx-auto d-block"src="{% static 'img/login.png' %}" width="40" height="40" alt="">
+                  <label> Upload File</label>
+                  <input class="my-4" type="file" placeholder="Place your document here" required autofocus>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block my-2" type="submit" style="background-color: #BED62F; border-color: #BED62F; ">Test</button>
+              <hr class="my-3">
+              <p class="help-block text-md-center">* Only .txt and .docx allowed</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,65 @@
+
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+
+
+{% block title %} About Us {% endblock %}
+
+{% block content %}
+    
+    <!--Phrase-->
+    <div class="container my-4" >
+        <div class="row">
+          <div class="mx-auto" >
+                <img class="mx-auto d-block"src="{% static 'img/gear.png' %}" width="70" height="70" alt="">
+                <h5 class="text-muted my-2">Your document has been analysed. We found {{ plagLevel }} of plagiarism.</h5>
+          </div>
+        </div>
+    </div>
+
+    <!-- Upload -->
+<div class="container" >
+        <div class="row">
+          <div class="col-sm-7 col-md-7 col-lg-12 mx-auto" >
+            <div class="card card-signin my-2" style="border-radius: 3%; padding: 3%; padding-top:2%; background-color: #fbfbfb; height: 450px;">
+              <div class="card-body"style=" border-style: dashed; border-color: #176988; background-color:white; " >
+                    <div class="scrollbar scrollbar-primary">
+                            <div class="force-overflow"></div>
+                          <p class="text-justify">
+                            {% autoescape off %}
+                      {% for sentence in doc_body %}
+                        {% if sentence in plag_sentences %}
+                          <mark> {{ sentence }}</mark>
+                        {% else %}
+                          {{ sentence }}
+                        {% endif %}
+                      {% endfor %}
+                      {% endautoescape %}
+                      <!-- <p>Sources of plagiaism detected:</p>
+                    {% for doc_name in plag_docs %}
+                       {{ doc_name }} 
+                    {% endfor %} -->
+                    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container my-3" >
+            <div class="row">
+              <div class="mx-auto" >
+                <form action="{% url 'plagiarism:Submitted' %}">
+                <button type="button" class="btn btn-lg btn-info" data-toggle="popover" title="Plagiarism Highlighted" data-placement="top" data-content="{% for doc_name in plag_docs %}
+                {{ doc_name }} 
+             {% endfor %}">Inspect Higlights</button>
+             
+                <button  class="btn btn-lg btn-primary my-2 d-inline " type="submit" style= "background-color: #BED62F; border-color: #BED62F;">Submit</button>
+                <hr class="my-5">
+              </form>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}

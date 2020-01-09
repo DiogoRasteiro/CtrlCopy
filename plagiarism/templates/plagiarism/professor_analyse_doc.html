@@ -1,0 +1,77 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} Analyse Doc {% endblock %}
+
+{% block content %} 
+
+<!--Phrase-->
+<div class="container my-4" >
+    <div class="row">
+      <div class="mx-auto" >
+        <h4 class="text-muted my-2" style="text-align: center;"> Your student’s document has been analysed. We found 12% of plagiarism. This is not Plagiarised </h4>
+      </div>
+    </div>
+</div>
+
+<!-- Document Containers -->
+<container class=" my-3 " style="background-color: #176988; height: 50px;">
+        <div class="container text-center text-md-center">
+          <div class="row">
+            <div class="col-sm-2">
+                    <div class="container" >
+                            <div class="row">
+                              <div class=" mx-auto" style="width: 10000px;">
+                                <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb">
+                                  <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                    <h5 class="text-muted" style="font-size:13pt">Student Information</h5>
+                                    <p class="text-muted" style="font-size:11pt;"> Mariana Martins </p>
+                                    <p class="text-muted" style="font-size:11pt;"> R20170814 </p>
+                                    <p class="text-muted" style="font-size:11pt;"> PSI </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+            </div>
+            <hr class="clearfix w-50 d-md-none">
+                <div class="col-lg-5 mx-auto">
+                    <div class="container" >
+                            <div class="row">
+                              <div class="mx-auto" style="width: 100%;">
+                                <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb">
+                                  <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 mx-auto">
+                    <div class="container" >
+                            <div class="row">
+                                <div class="mx-auto" style="width: 100%;">
+                                    <div class="card card-signin my-2" style="border-radius: 10%; padding: 4%; background-color: #fbfbfb">
+                                        <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</container>
+
+<div class="container my-3" >
+        <div class="row">
+          <div class="col-lg-5 mx-auto" >
+              <button class="btn btn-lg btn-primary my-2 d-inline " type="submit" style= "background-color: #BED62F; border-color: #BED62F;">Insert</button>
+              <button class="btn btn-lg btn-primary my-2 d-inline " type="submit" style= "background-color: darkred; border-color: darkred;"> Reject </button>
+              <hr class="my-5">
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} AnalysDocProf {% endblock %}
+
+{% block content %} 
+
+<!--Phrase-->
+<div class="container my-4" >
+        <div class="row">
+          <div class="mx-auto" >
+              <img class="mx-auto d-block"src="{% static 'img/gear.png' %}" width="70" height="70" alt="">
+            <h5 class="text-muted my-2">Your document has been loaded succesfully.</h5>
+          </div>
+        </div>
+    </div>
+    
+
+
+    
+<!-- Blocks -->
+          <container class=" my-3 " style="background-color: #176988; height: 50px;">
+                <div class="container text-center text-md-center">
+                  <div class="row">
+                    <div class="col-sm-8">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class=" mx-auto" style="width: 10000px;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 3%; background-color: #fbfbfb; height: 450px;">
+                                          <div class="card-body" style=" border-style: dashed; background-color:white; border-color: #176988;">
+                                              <div class="scrollbar scrollbar-primary">
+                                                  <div class="force-overflow"></div>
+                                                <p class="text-justify">
+                                             U.S. human spaceflight program appears to be on an unsustainable trajectory. It is perpetuating the perilous practice of pursuing goals that do not match allocated resources.  Space operations are among the most complex and unforgiving pursuits ever undertaken by humans.  It really is rocket science.  Space operations become all the more difficult when means do not match aspirations.  Such is the case today. 
+                                                </p><p class="text-justify">
+                                                The nation is facing important decisions on the future of human spaceflight.  Will we leave the close proximity of low-Earth orbit, where astronauts have circled since 1972, and explore the solar system, charting a path for the eventual expansion of human civilization into space?  If so, how will we ensure that our exploration delivers the greatest benefit to the nation? Can we explore with reasonable assurances of human safety? And, can the nation marshal the resources to embark on the mission? 
+                                             </p><p class="text-justify">
+                                                 Whatever space program is ultimately selected, it must be matched with the resources needed for its execution.  How can we marshal the necessary resources?  There are actually more options available today than in 1961 when President Kennedy challenged NASA and the nation to “land a man on the Moon by the end of the decade.”
+                                            </p></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                    <hr class="clearfix w-50 d-md-none">
+                    <div class="col-sm-4 mx-auto">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class="mx-auto" style="width: 100%;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 5%; background-color: #fbfbfb; height: 450px;">
+                                          <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                           <p> <img src="{% static 'img/tool.png' %}" width="27" height="27" alt=""></p>
+                                            <label class="text-muted" for="customRange2">Percentage Level</label>
+                                            <input type="range" class="custom-range" min="1" max="100" id="customRange2" step="1" onchange="range.value=value">
+                                            <output id="range">50</output><span style="margin-left:2px;">%</span>
+                                            <p class="text-muted my-2">Key Words</p>
+                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: rgba(189, 214, 47, 0.705); border-color: rgba(189, 214, 47, 0.705); ">Review</button>
+                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: rgba(189, 214, 47, 0.705); border-color: rgba(189, 214, 47, 0.705); ">NASA</button>
+                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: rgba(189, 214, 47, 0.705); border-color: rgba(189, 214, 47, 0.705); ">Space Program</button>
+                                            <hr>
+                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: red; border-color: red; ">X Remove Keyword</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </div>
+                        </div>
+                    </div>
+            </container>
+
+            
+            <div class="container my-3" >
+                <div class="row">
+                  <div class="mx-auto" >
+                    <a class="btn btn-lg btn-primary my-2 d-inline" role="button" href="insert_doc_professor.html" style="background-color: #BED62F; border-color: #BED62F; padding-left: 50px ;padding-right: 50px;">Test</a>
+                     
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+
+          <script src="js/jquery-3.3.1.slim.min.js" ></script>
+          <script src="js/popper.min.js" ></script>
+          <script src="js/bootstrap.min.js" ></script>
+
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+} 
+
+</script>
+
+{% endblock %}

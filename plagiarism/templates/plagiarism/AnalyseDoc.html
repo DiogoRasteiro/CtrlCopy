@@ -1,0 +1,98 @@
+{% extends "plagiarism/base.html" %}
+{% load static %}
+
+{% block title %} AnalyseStu {% endblock %}
+
+{% block content %} 
+
+<!--Phrase-->
+<div class="container my-4" >
+        <div class="row">
+          <div class="mx-auto" >
+              <img class="mx-auto d-block"src="{% static 'img/gear.png' %}" width="70" height="70" alt="">
+            <h5 class="text-muted my-2">Your document has been loaded succesfully.</h5>
+          </div>
+        </div>
+    </div>
+    
+
+
+    
+<!-- Blocks -->
+        <form class="form-signin" enctype="multipart/form-data" method="POST" >
+          {% csrf_token %}
+          <container class=" my-3 " style="background-color: #176988; height: 50px;">
+                <div class="container text-center text-md-center">
+                  <div class="row">
+                    <div class="col-sm-8">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class=" mx-auto" style="width: 10000px;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 3%; background-color: #fbfbfb; height: 450px;">
+                                          <div class="card-body" style=" border-style: dashed; background-color:white; border-color: #176988;">
+                                              <div class="scrollbar scrollbar-primary">
+                                                  <div class="force-overflow"></div>
+                                                <p class="text-justify">
+                                                  {% for sentence in doc_body %}
+                                                    {{ sentence }}
+                                                {% endfor %}</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                    <hr class="clearfix w-50 d-md-none">
+                    <div class="col-sm-4 mx-auto">
+                            <div class="container" >
+                                    <div class="row">
+                                      <div class="mx-auto" style="width: 100%;">
+                                        <div class="card card-signin my-2" style="border-radius: 10%; padding: 5%; background-color: #fbfbfb; height: 450px;">
+                                          <div class="card-body" style=" border-style: dashed; border-color: #176988;">
+                                           <p> <img src="{% static 'img/tool.png' %}" width="27" height="27" alt=""></p>
+                                            <label class="text-muted" for="customRange2">Percentage Level</label>
+                                            <input type="range" class="custom-range" min="0" max="100" name = 'percentage' id="customRange2" step="1" onchange="range.value=value">
+                                            <output id="range">50</output><span style="margin-left:2px;">%</span>
+                                            <p class="text-muted my-2">Key Words</p>
+                                            {% for word in keywords %}
+                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color: rgba(189, 214, 47, 0.705); border-color: rgba(189, 214, 47, 0.705); ">{{word}}</button>
+                                            {% endfor %}
+                                            <hr>
+                                            <button class="btn btn-sm btn-primary btn-block my-2" type="submit" style="background-color:red; border-color: red; ">X Remove Keyword</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                             </div>
+                        </div>
+                    </div>
+            </container>
+
+            
+            <div class="container my-3" >
+                <div class="row">
+                  <div class="mx-auto" >
+                      <button class="btn btn-lg btn-primary my-2 d-inline" role="button" type='submit' style="background-color: #BED62F; border-color: #BED62F; padding-left: 50px ;padding-right: 50px;">Test</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5">
+        </form>
+          <script src="js/jquery-3.3.1.slim.min.js" ></script>
+          <script src="js/popper.min.js" ></script>
+          <script src="js/bootstrap.min.js" ></script>
+a
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+} 
+
+</script>
+
+{% endblock %}
