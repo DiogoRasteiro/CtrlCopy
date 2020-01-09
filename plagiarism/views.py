@@ -138,10 +138,12 @@ def submit(request):
 		return render(request, 'plagiarism/student_submit.html', results)
 
 	else:
-		if  request.session['upload_stage'] != 0 and (request.session['doc_id'] != 0):
-			doc = Document.objects.get(id = request.session['doc_id'])
-			doc.delete()
-
+		try:
+			if  request.session['upload_stage'] != 0 and (request.session['doc_id'] != 0):
+				doc = Document.objects.get(id = request.session['doc_id'])
+				doc.delete()
+		except:
+			pass
 		form = DocumentForm()
 		request.session['upload_stage'] = 0
 		return render(request, 'plagiarism/uploaddoc.html', {'form':form})
